@@ -1,0 +1,367 @@
+<ion-header>
+  <ion-toolbar style="--background:#753a88!important;--border-color:white;--border-width:1px;">
+     
+      <ion-icon slot="start" name="chevron-back-outline" 
+      style="color: white;font-size: 20px;padding-left: 5px;" routerLink="/business"></ion-icon>
+      
+      <h5 style="color: white;font-size: 15px;font-weight: bold;text-align: center;
+      padding-right: 10px;">
+        GST Registration</h5>
+        <ion-buttons slot="end">
+          <ion-button style="background-color: #32CD32	;text-transform: inherit;color:white" 
+          routerLink="/getquote">
+            Get Quote</ion-button>
+        </ion-buttons>
+     </ion-toolbar>
+   </ion-header>
+
+<ion-content>
+
+<ion-toolbar>
+
+  <ion-segment scrollable
+  value="all"
+
+  mode="Android"
+  [(ngModel)]="segmentModel" 
+  (ionChange)="segmentChanged($event)">
+
+  <ion-segment-button class="overview" value="Overview" scrollX="true" (click)="ScrollToPoint(-300, -120)">
+    <ion-label style="color: white;font-weight: 600;">Overview</ion-label>
+  </ion-segment-button>
+
+  <ion-segment-button class="Benifits" value="Benifits" scrollX="true">
+    <ion-label style="font-weight: bold; color: white;">Benifits </ion-label>
+  </ion-segment-button>
+
+  <ion-segment-button class="Pre-requisites" value="Pre-requisites" scrollX="true">
+    <ion-label style="font-weight: bold; color: white;">Pre-requisites </ion-label>
+  </ion-segment-button>
+
+  <ion-segment-button class="Deliverables" value="Deliverables" scrollX="true">
+    <ion-label style="font-weight: bold; color: white;">Deliverables</ion-label>
+  </ion-segment-button>
+
+  <ion-segment-button class="Faqs" value="FAQs" scrollX="true">
+    <ion-label style="font-weight: bold; color: white;">FAQs</ion-label>
+  </ion-segment-button>
+
+  </ion-segment>
+
+</ion-toolbar>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+<div *ngIf="segmentModel === 'Overview'">
+
+  <h3 style="text-align: center;font-weight: bold;">GST Registration</h3>
+  <h4 style="text-align: center;font-weight: bold;">at ₹ 1,999*</h4>
+
+  <br>
+
+  <p style="text-align: center;">Any time. Any where. At Single click</p>
+  <br>
+  <br>
+  <div class="container" style="text-align: center;">
+  
+  <img src="https://www.startupwala.com/images/pan-tan-registration.svg" style="width: 100px;height: 60px;">
+ 
+  </div>
+
+  <div class="container" style="text-align: center;">
+  <p style="font-size: 12px;margin-left: 10px;">Online Legal Services Platform in india</p>
+  <p style="font-size: 12px;margin-top: 0em;margin-left: 10px;">Easy | Quick | Affordable | Online</p>
+  </div>
+
+  
+  </div>
+  
+  <!--Special Recharge-->
+
+<div *ngIf="segmentModel === 'Eligibility'">
+
+  <ion-card style="margin-bottom: 25px;">    
+    <ion-row (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}" 
+    style="width: 234px;height: 70px;">
+    <ion-col size="3" style="margin-bottom: 10px;">
+    <img src="https://www.startupwala.com/images/upon-reaching-turnover-of-20-lakh.svg" 
+    style="height:50px;width:60px;margin-bottom: 0em;text-align: left;">
+    </ion-col>
+    <ion-col>
+    <div>
+      <p>Upon Reaching Turnover of 20 Lakh</p>
+    </div>
+    </ion-col>
+  <ion-icon class="left" [name]="isGroupShown(i) ? 'chevron-up-outline' : 'chevron-down-outline'" 
+  style="margin-top: 25px;color: gray;text-align: end;" >
+  </ion-icon>
+</ion-row>
+<ion-card-content *ngIf="isGroupShown(i)" style="font-size: 12px;margin-left: 10px;margin-right: 5px;
+margin-bottom: 10px;text-align: justify;color: black;">                  
+  Many times startups need to borrow money and take things on credit. In case of normal Partnerships,
+  Partners personal savings and property would be at risk incase business is not able to repay its loans.
+   In a private limited company, only investment in business is lost, personal assets of the directors are
+    safe.             
+</ion-card-content>
+</ion-card>
+
+ 
+<ion-card style="margin-bottom: 25px;">    
+<ion-row (click)="toggleGroup1(i)" [ngClass]="{active: isGroupShown1(i)}"
+style="width: 234px;height: 70px;">
+<ion-col size="3" style="margin-bottom: 10px;">
+
+<img src="https://www.startupwala.com/images/inter-state-sales.svg" 
+style="height:50px;width:60px;margin-bottom: 0em;text-align: left;">
+
+</ion-col>
+<ion-col>
+<div>
+  <p>Inter-State Sales or Service provider</p>
+</div>
+</ion-col>
+<ion-icon class="left" [name]="isGroupShown1(i) ? 'chevron-up-outline' : 'chevron-down-outline'" 
+style="margin-top: 25px;color: gray;text-align: end;">
+</ion-icon>
+</ion-row>
+<ion-card-content *ngIf="isGroupShown1(i)" style="font-size: 12px;margin-left: 10px;margin-right: 5px;
+margin-bottom: 10px;text-align: justify;color: black;">                  
+Private limited company is popular and well known business structure. Corporate Customers, 
+Vendors and Govt. Agencies prefer to deal with Private Limited Company instead of proprietorship or 
+normal partnerships.           
+</ion-card-content>
+</ion-card>
+
+
+<ion-card style="margin-bottom: 25px;">    
+<ion-row (click)="toggleGroup2(i)" [ngClass]="{active: isGroupShown2(i)}"
+style="width: 234px;height: 70px;">
+<ion-col size="3" style="margin-bottom: 10px;">
+
+<img src="https://www.startupwala.com/images/e-commerce-operator.svg" 
+style="height:50px;width:60px;margin-bottom: 0em;text-align: left;">
+
+</ion-col>
+<ion-col>
+<div>
+  <p>E-commerce operator</p>
+</div>
+</ion-col>
+<ion-icon class="left" [name]="isGroupShown2(i) ? 'chevron-up-outline' : 'chevron-down-outline'" 
+style="margin-top: 25px;color: gray;text-align: end;">
+</ion-icon>
+</ion-row>
+<ion-card-content *ngIf="isGroupShown2(i)" style="font-size: 12px;margin-left: 10px;margin-right: 5px;
+margin-bottom: 10px;text-align: justify;color: black;">                  
+Pvt. Ltd. company enjoys wide options to raise funds through bank loans, Angel Investors, 
+Venture Capitalists, in comparison to LLPs and OPCs.             
+</ion-card-content>
+</ion-card>
+
+<ion-card style="margin-bottom: 25px;">    
+<ion-row (click)="toggleGroup3(i)" [ngClass]="{active: isGroupShown3(i)}"
+style="width: 234px;height: 70px;">
+<ion-col size="3" style="margin-bottom: 10px;">
+<img src="https://www.startupwala.com/images/vendors-selling-through-e-commerce-portals.svg" 
+style="height:50px;width:60px;margin-bottom: 0em;text-align: left;">
+</ion-col>
+<ion-col>
+<div>
+  <p>Vendors selling through Ecommerce Portals</p>
+</div>
+</ion-col>
+<ion-icon class="left"class="left" [name]="isGroupShown3(i) ? 'chevron-up-outline' : 'chevron-down-outline'" 
+style="margin-top: 25px;color: gray;text-align: end;">
+</ion-icon>
+</ion-row>
+<ion-card-content *ngIf="isGroupShown3(i)" style="font-size: 12px;margin-left: 10px;margin-right: 5px;
+margin-bottom: 10px;text-align: justify;color: black;">                  
+Investors love to invest in Private Limited companies as it is well structured and less strings attached.
+Most important it is very easy to exit from a private limited company.     
+</ion-card-content>
+</ion-card>
+
+
+<ion-card style="margin-bottom: 25px;">    
+<ion-row (click)="toggleGroup4(i)" [ngClass]="{active: isGroupShown4(i)}"
+style="width: 234px;height: 70px;">
+<ion-col size="3" style="margin-bottom: 10px;">
+<img src="https://www.startupwala.com/images/non-resident-person-importer.svg" 
+style="height:50px;width:60px;margin-bottom: 0em;text-align: left;">
+</ion-col>
+<ion-col>
+<div>
+  <p>Non-Residents & Importers</p>
+</div>
+</ion-col>
+<ion-icon class="left"class="left" [name]="isGroupShown4(i) ? 'chevron-up-outline' : 'chevron-down-outline'" 
+style="margin-top: 25px;color: gray;text-align: end;">
+</ion-icon>
+</ion-row>
+<ion-card-content *ngIf="isGroupShown4(i)" style="font-size: 12px;margin-left: 10px;margin-right: 5px;
+margin-bottom: 10px;text-align: justify;color: black;">                  
+For startups putting together a team and keeping them for long time is a challenge, due to 
+confidence attached to private limited structure, it is easy to hire people as well as motivate them 
+with corporate designations and stock options.     
+</ion-card-content>
+</ion-card>
+
+   </div>
+
+<!-- -------pre-req---- -->
+<div *ngIf="segmentModel === 'Pre-requisites'">
+
+  <div class="container" style="text-align: start;">
+    <ion-icon name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+    <ion-label>  For Pvt.Ltd./Public Ltd./OPC</ion-label></div>
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>  Company PAN card</ion-label></div>
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>  MOA,AOA & Incorporation Certificate</ion-label></div>
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>  Company Address Proof</ion-label></div>
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>  For LLP & Partnership Firm</ion-label></div>
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>   Firm PAN card</ion-label></div>
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>   LLP Agreement / Partnership deed</ion-label></div>
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>   Address proof of Firm</ion-label></div>
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>   For Proprietorship Firm</ion-label></div>
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>   Proprietor's PAN card</ion-label></div>
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>   Shop Act / Ghumasta License</ion-label></div>
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>   Address proof of Firm</ion-label></div>
+<br>
+
+</div>
+<!--FAQs-->
+
+<div *ngIf="segmentModel === 'FAQs'">
+
+  <ion-list>
+    <ion-card>
+    <ion-item>
+    <h6 (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}" style="color: black;font-size: 13px;">
+      1. What is Central GST (CGST)?
+    <ion-icon class="left" [name]="isGroupShown(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+     style="color: black;font-size: 15px;">
+    </ion-icon>
+    <p *ngIf="isGroupShown(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+    margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+    When the supply of goods and services takes place WITHIN the State (Intra-state), that is when the 
+    Supplier and the Consumer both are in the same state, two taxes will be levied. One part is levied by
+     the State Government and the other is by Central Government. Hence the tax levied by the central 
+     government is known as Central GST.
+    </p></h6>
+    </ion-item>
+    </ion-card>
+
+   <ion-card>
+    <ion-item>
+      <h6 (click)="toggleGroup1(i)" [ngClass]="{active: isGroupShown1(i)}" style="color: black;font-size: 13px;">
+        2. What is State GST (SGST)?
+      <ion-icon class="left" [name]="isGroupShown1(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+       style="color: black;font-size: 15px;">
+      </ion-icon>
+      <p *ngIf="isGroupShown1(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+      margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+      State GST is the component of GST that will be collected 
+      by the state government on all items, both goods and services on intra-state trade.
+      </p></h6>
+      </ion-item>
+      </ion-card>
+
+      <ion-card>
+      <ion-item>
+        <h6 (click)="toggleGroup2(i)" [ngClass]="{active: isGroupShown2(i)}" style="color: black;font-size: 13px;">
+        3. What is Integrated GST (IGST)?
+        <ion-icon class="left" [name]="isGroupShown2(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+         style="color: black;font-size: 15px;">
+        </ion-icon>
+        <p *ngIf="isGroupShown2(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+        margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+        When the supply of goods and services takes place BETWEEN two States (Inter-state), that is when the place of Supplier 
+        and the Consumer are in different states, Integrated GST is levied by the central government. In case of
+        Inter State supply of Goods and Services only IGST will be applicable.
+        </p></h6>
+        </ion-item>
+        </ion-card>
+
+        <ion-card>
+        <ion-item>
+          <h6 (click)="toggleGroup3(i)" [ngClass]="{active: isGroupShown3(i)}" style="color: black;font-size: 13px;">
+          4. What are benefits of GST in India?
+          <ion-icon class="left" [name]="isGroupShown3(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+           style="color: black;font-size: 15px;">
+          </ion-icon>
+          <p *ngIf="isGroupShown3(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+          margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+          Many Indirect taxeslike VAT, Excise Duty, Service Tax, CST, Import- Export, Octroi, Luxury Tax and Entertainment Tax is now only require a GST 
+          registration. This will result in less compliances and help businesses to focus more into their business.
+          </p></h6>
+          </ion-item>
+          </ion-card>
+
+          <ion-card>
+          <ion-item>
+            <h6 (click)="toggleGroup4(i)" [ngClass]="{active: isGroupShown4(i)}" style="color: black;font-size: 13px;">
+            5. What are GST Rates in India?
+            <ion-icon class="left" [name]="isGroupShown4(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+             style="color: black;font-size: 15px;">
+            </ion-icon>
+            <p *ngIf="isGroupShown4(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+            margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+            The GST rate will depend on the type of goods and services. Currently, the slab rates are 5%, 12%, 
+            18% and 28%. Gold and rough diamonds do not currently fall under GST and will be taxed at 3% and 0.25%
+            </p></h6>
+            </ion-item>
+            </ion-card>
+
+      </ion-list>
+
+</div>
+
+
+</ion-content>
+
+
+

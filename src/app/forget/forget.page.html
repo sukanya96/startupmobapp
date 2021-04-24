@@ -1,0 +1,46 @@
+<ion-header class="ion-no-border">
+
+	<ion-toolbar>
+  <img src="../../assets/gif/logo.png">
+	</ion-toolbar>
+
+</ion-header>
+
+<ion-content fullscreen="true">
+
+<div class="ion-padding container" style="padding-top: 30px;">
+
+<!-- <form [formGroup]="forgetForm" (ngSubmit)="resetpassword()"> -->
+
+<h5 style="padding-bottom: 20px;padding-top: 33px;">Enter your registered Email</h5> 
+
+<div class="form">
+  <div class="wrap-input">
+    
+   <input class="input" [(ngModel)]="email" type="text" name="user-name"
+    placeholder="Enter email">
+   </div>
+
+<!-- <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+Email required
+</span>
+
+<span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+Please enter Valid Email
+</span> -->
+
+</div>
+
+<div class="container-form-btn">
+  <ion-button class="ion-button-class form-btn" expand="round" side="bottom"
+  (click)="reset()">Reset Password</ion-button> 
+  
+  </div>   
+  <h5 style="font-size: 17px;text-align: center;" 
+  routerLink="/login">or <a style="text-decoration: none;color: purple;">Log in</a> </h5>
+
+
+<!-- </form> -->
+</div>
+
+</ion-content>

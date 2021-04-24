@@ -1,0 +1,258 @@
+<ion-header>
+  <ion-toolbar style="--background:#753a88!important;">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="light">Welcome</ion-title>
+    <ion-buttons slot="end">
+
+      <ion-button class="notification">
+        <ion-icon color="light" slot="end" name="search-outline"></ion-icon>
+      </ion-button>
+
+      <ion-button class="notification">
+        <ion-icon color="light" slot="end" name="notifications-outline"></ion-icon>
+        <ion-badge color="danger">66</ion-badge>
+        <span>&nbsp;</span>
+      </ion-button>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="bg-class">
+
+  <!-----Slides---->
+<ion-slides pager="true" [options]="slideOpts" #mySlider >
+
+    <ion-slide>
+      <ion-card>
+      <img src="../../assets/startimg.jpg">
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+     <ion-card>
+     <img src="../../assets/partnership.jpg" > </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+     <ion-card>
+        <img src="../../assets/oneperson.jpg" >
+      </ion-card>
+    </ion-slide>
+
+    <!-- <ion-slide>
+     <ion-card>
+        <img src="../../assets/publiclimited.jpg" >
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+     <ion-card>
+        <img src="../../assets/gst.jpg">
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+     <ion-card>
+        <img src="../../assets/section-8.jpg" >
+      </ion-card>
+    </ion-slide>-->
+  </ion-slides> 
+
+  
+
+<ion-grid>
+  <ion-row>
+  <ion-col size="6">
+  <ion-card class="linear" routerLink="/business">
+    <ion-card-header>
+      <ion-card-subtitle>Start Business</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content color="light">
+      <div class="text-align:center">
+        <circle-progress [percent]="50" [space]="-5" [radius]="50" [outerStrokeWidth]="5" [innerStrokeWidth]="3"
+          [innerStrokeColor]="'yellow'" [outerStrokeColor]="'blue'" [animation]="true"
+          [animationDuration]="2300"></circle-progress>
+      </div>
+    </ion-card-content>  
+  </ion-card>
+  </ion-col>
+
+  <ion-col size="6">
+  <ion-card class="linear" routerLink="/prtct-business">
+    <ion-card-header>
+      <ion-card-subtitle>Protect Business</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content color="light">
+      <div class="text-align:center">
+        <circle-progress [percent]="50" [space]="-5" [radius]="50" [outerStrokeWidth]="5" [innerStrokeWidth]="3"
+          [innerStrokeColor]="'yellow'" [outerStrokeColor]="'blue'" [animation]="true"
+          [animationDuration]="2300"></circle-progress>
+      </div>
+    </ion-card-content>  
+  </ion-card>
+  </ion-col>
+  </ion-row>
+
+  <ion-row>
+  <ion-col size="6">
+  <ion-card class="linear" routerLink="/manage-business">
+    <ion-card-header>
+      <ion-card-subtitle>Manage Business</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content color="light">
+      <div class="text-align:center">
+        <circle-progress [percent]="50" [space]="-5" [radius]="50" [outerStrokeWidth]="5" [innerStrokeWidth]="3"
+          [innerStrokeColor]="'yellow'" [outerStrokeColor]="'blue'" [animation]="true"
+          [animationDuration]="2300"></circle-progress>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  </ion-col>
+
+  <ion-col size="6">
+  <ion-card class="linear" routerLink="/grow-business">
+    <ion-card-header>
+      <ion-card-subtitle>Grow Business</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content color="light">
+      <div class="text-align:center">
+        <circle-progress [percent]="50" [space]="-5" [radius]="50" [outerStrokeWidth]="5" [innerStrokeWidth]="3"
+          [innerStrokeColor]="'yellow'" [outerStrokeColor]="'blue'" [animation]="true"
+          [animationDuration]="2300"></circle-progress>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-col>
+</ion-row>
+</ion-grid>
+
+  
+  <h5 style="padding-left: 24px;color: white;">Start Business</h5>
+  <div class="category-slider">
+              
+    <ion-slides [options]="{ slidesPerView: '2', zoom: false, grabCursor: true }" #sliders
+    (ionSlidesDidLoad)="slidesDidLoad(sliders)">
+      <ion-slide *ngFor="let cat of categories">
+        <ion-col>
+        <ion-card class="slidecard">
+          <ion-card-content class="card-content">
+            <img src="{{cat.categoryimage }}"/>
+          </ion-card-content>
+          </ion-card>
+          <p style="color: white;font-size: 13px;letter-spacing: 1px;">{{ cat.name }}</p>
+        </ion-col>
+       <!-- <ion-card>
+         <ion-card-content>
+          <img src="{{cat.categoryimage }}" />
+          </ion-card-content>
+        </ion-card> -->
+      </ion-slide>
+    </ion-slides>
+  </div>
+  
+  
+  <h5 style="color: white;padding-left: 24px;">Manage Business</h5>
+  <div class="category-slider">
+                
+    <ion-slides [options]="{ slidesPerView: '2', zoom: false, grabCursor: true }" #sliders1
+    (ionSlidesDidLoad)="slidesDidLoad(sliders1)">
+      <ion-slide *ngFor="let cat of categories1">
+        <!-- <ion-col>
+          <img style="width: 9rem;height: 7rem;" src="{{cat.categoryimage1 }}" />
+          <p style="color: white;font-size: 13px;letter-spacing: 1px;">{{ cat.name }}</p>
+        </ion-col>   -->
+        <ion-col>
+          <ion-card class="slidecard">
+            <ion-card-content class="card-content">
+              <img src="{{cat.categoryimage1 }}"/>
+            </ion-card-content>
+            </ion-card>
+            <p style="color: white;font-size: 13px;letter-spacing: 1px;">{{ cat.name }}</p>
+          </ion-col>
+      </ion-slide>
+    </ion-slides> 
+  </div>
+  
+  <h5 style="color: white;padding-left: 24px;">Protect Business</h5>
+  <div class="category-slider">            
+    <ion-slides [options]="{ slidesPerView: '2', zoom: false, grabCursor: true }" #sliders2
+    (ionSlidesDidLoad)="slidesDidLoad(sliders2)">
+      <ion-slide *ngFor="let cat of categories2">
+        <!-- <ion-col>
+          <img style="width: 9rem;height: 7rem;" src="{{cat.categoryimage2 }}" />
+          <p style="color: white;font-size: 13px;letter-spacing: 1px;">{{ cat.name }}</p>  
+        </ion-col>   -->
+        <ion-col>
+          <ion-card class="slidecard">
+            <ion-card-content class="card-content">
+              <img src="{{cat.categoryimage2}}"/>
+            </ion-card-content>
+            </ion-card>
+            <p style="color: white;font-size: 13px;letter-spacing: 1px;">{{ cat.name }}</p>
+          </ion-col>
+      </ion-slide>
+    </ion-slides> 
+  </div>
+  
+   <h5 style="color: white;padding-left: 24px;">Grow Business</h5>
+  <div class="category-slider">
+    <ion-slides [options]="{ slidesPerView: '2', zoom: false, grabCursor: true }" #sliders3
+    (ionSlidesDidLoad)="slidesDidLoad(sliders3)">
+      <ion-slide *ngFor="let cat of categories3">
+        <!-- <ion-col>
+          <img style="width: 9rem;height: 7rem;" src="{{cat.categoryimage3 }}" />
+          <p style="color: white;font-size: 13px;letter-spacing: 1px;">{{ cat.name }}</p>
+        </ion-col>   -->
+        <ion-col>
+          <ion-card class="slidecard">
+            <ion-card-content class="card-content">
+              <img src="{{cat.categoryimage3}}"/>
+            </ion-card-content>
+            </ion-card>
+            <p style="color: white;font-size: 13px;letter-spacing: 1px;">{{ cat.name }}</p>
+          </ion-col>
+      </ion-slide>
+    </ion-slides> 
+  </div>
+
+</ion-content>
+
+<ion-toolbar>
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom" color="purple" routerLink="/dashboard">
+    <ion-tab-button>
+      <ion-icon name="home-outline" color="light"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button>
+      <ion-icon name="search" color="light" ></ion-icon>
+    </ion-tab-button>
+    
+    <!-- <ion-tab-button tab="tab3" class="custom-tab">
+      <ion-icon name="add" style="color: white;"></ion-icon>
+    </ion-tab-button> -->
+
+    <ion-tab-button >
+      <ion-icon name="chatbox-ellipses-outline" color="light"></ion-icon>
+      <ion-badge>9</ion-badge>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="openModal2()" > 
+      <ion-icon name="person-circle-outline" color="light" ></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+  </ion-tabs>
+  </ion-toolbar>
+
+
+
+  
+
+
+  

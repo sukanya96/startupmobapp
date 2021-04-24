@@ -1,0 +1,101 @@
+
+  <ion-header>
+    <ion-toolbar style="--background:#753a88!important;--border-width:1px;">
+      <ion-buttons slot="start">
+        <ion-icon name="chevron-back-outline" style="font-size:23px;color: white;" routerLink="/dashboard"></ion-icon>
+        <h5 style="color: white;margin-left:70px">Get Quote</h5>
+        </ion-buttons>
+       </ion-toolbar>
+     </ion-header>
+
+<ion-content class="ion-padding">
+
+  <form [formGroup]="formcontrol" (ngSubmit)="grab(formcontrol.value)">
+
+  <h5>Fill & Get Documents in 1 Minute to start Pvt.Ltd. Company</h5>
+
+  <ion-item transparent>  
+    <ion-label position="floating" color="dark">  
+      <ion-icon name="person" style="padding-right: 10px;font-size: 20px;">
+      </ion-icon>Full Name</ion-label> 
+    <ion-input type="text" formControlName="name" [(ngModel)]="user.name"></ion-input>
+  </ion-item>
+
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
+    Name is required.
+  </span>
+ 
+
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.pattern">
+    Name must contain only letters.
+  </span>
+ 
+  
+  <ion-item transparent>
+      
+    <ion-label position="floating" color="dark">  
+      <ion-icon name="call" style="padding-right: 10px;font-size: 20px;"></ion-icon>
+      Mobile Number</ion-label>
+    
+    <ion-input type="number" formControlName="phone" [(ngModel)]="user.phone"></ion-input>
+     
+  </ion-item>
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.phone.errors?.required">
+    Mobile number is required.
+  </span>
+ 
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.phone.errors?.pattern">
+    Please enter valid phone number
+  </span>
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.phone.errors?.maxLength">
+ mobile number not valid</span>
+ <span class="error ion-padding" *ngIf="isSubmitted && errorControl.phone.errors?.minLength">
+  Please enter 10 digit phone number
+   </span>
+
+
+  <ion-item transparent>
+      
+    <ion-label position="floating" color="dark">
+      <ion-icon name="mail" style="padding-right: 15px;font-size: 20px;">
+      </ion-icon>Email</ion-label>
+    
+    <ion-input type="text" formControlName="email" [(ngModel)]="user.email" ></ion-input>
+     
+  </ion-item>
+  
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+    Email required
+  </span>
+ 
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+    Please enter Valid Email
+  </span>
+
+  <ion-item transparent>
+      
+    <ion-label position="floating" color="dark">
+    <ion-icon name="location" style="padding-right: 10px;font-size: 20px;"></ion-icon>
+    City Name</ion-label>
+    <ion-input type="text" formControlName="city" [(ngModel)]="user.city"></ion-input>
+     
+  </ion-item>
+  
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.city.errors?.required">
+    City Name required
+  </span>
+
+  <ion-item transparent lines="none">
+  <ion-label style="font-size: 16px;padding-top: 15px;padding-left: 13px;">Or Use Current Location
+  
+  <ion-icon name="locate" style="font-size: 20px;padding-left: 16px;">
+    Yur location : {{address}}</ion-icon></ion-label>
+    </ion-item>
+  
+</form>
+  </ion-content>
+
+  <ion-footer>
+    <ion-button (click)="grab()" class="ion-button-class" 
+    expand="block" style="--background:#753a88!important;">Get quote</ion-button>
+  </ion-footer>

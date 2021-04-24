@@ -1,0 +1,37 @@
+<!-- <ion-header>
+  <ion-toolbar style="--background:#753a88!important;">
+    <ion-searchbar></ion-searchbar>
+    <ion-icon name="close-circle-outline" style="color: white;"
+     (click)="closeModal()" slot="end"></ion-icon> 
+  </ion-toolbar>
+</ion-header> -->
+<ion-header>
+  <ion-toolbar style="--background:#753a88!important;">
+    <!-- <ion-buttons>
+      <ion-menu-button mode="ios" color="light">
+       
+      </ion-menu-button> 
+    </ion-buttons> -->
+    </ion-toolbar>
+<ion-toolbar>
+  <div class="autocomplete">
+    <ion-searchbar (ionInput)="getItems($event)" placeholder="Find the Product" 
+    type="text" debounce="500">
+    </ion-searchbar>
+  </div>
+
+</ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+<!------ Refresher ------->
+<ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+  <ion-refresher-content pullingIcon="arrow-dropdown"
+   pullingText="Pull to refresh" refreshingSpinner="circles"
+    refreshingText="Refreshing...">
+  </ion-refresher-content>
+</ion-refresher>
+
+</ion-content>

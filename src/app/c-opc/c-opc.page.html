@@ -1,0 +1,533 @@
+<ion-header>
+  <ion-toolbar style="--background:#753a88!important;--border-color:white;--border-width:1px;">
+     
+   <ion-icon slot="start" name="chevron-back-outline" 
+      style="color: white;font-size: 20px;padding-left: 5px;" routerLink="/manage-business"></ion-icon>
+      
+      <h5 style="text-align: center;color: white;font-size: 15px;font-weight: bold;">
+     Closure of OPC</h5>
+      <ion-buttons slot="end">
+        <ion-button style="background-color: #32CD32	;text-transform: inherit;color:white" 
+        routerLink="/getquote">
+          Get Quote</ion-button>
+      </ion-buttons>
+     </ion-toolbar>
+   </ion-header>
+
+<ion-content>
+
+<ion-toolbar>
+
+  <ion-segment scrollable
+  value="all"
+
+  mode="Android"
+  [(ngModel)]="segmentModel" 
+  (ionChange)="segmentChanged($event)">
+
+  <ion-segment-button class="overview" value="Overview" scrollX="true" (click)="ScrollToPoint(-300, -120)">
+    <ion-label style="color: white;font-weight: 600;">Overview</ion-label>
+  </ion-segment-button>
+
+  <ion-segment-button class="Benifits" value="Benifits" scrollX="true">
+    <ion-label style="font-weight: bold; color: white;">Benifits </ion-label>
+  </ion-segment-button>
+
+  <ion-segment-button class="Pre-requisites" value="Pre-requisites" scrollX="true">
+    <ion-label style="font-weight: bold; color: white;">Pre-requisites </ion-label>
+  </ion-segment-button>
+
+  <ion-segment-button class="Deliverables" value="Deliverables" scrollX="true">
+    <ion-label style="font-weight: bold; color: white;">Deliverables</ion-label>
+  </ion-segment-button>
+
+  <ion-segment-button class="Faqs" value="FAQs" scrollX="true">
+    <ion-label style="font-weight: bold; color: white;">FAQs</ion-label>
+  </ion-segment-button>
+
+  </ion-segment>
+
+</ion-toolbar>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+<div *ngIf="segmentModel === 'Overview'">
+  <h4 style="text-align: center;font-weight: bold;">Closure of OPC in 5days </h4>
+  <h4 style="text-align: center;font-weight: bold;">at ₹ 14,999*</h4>
+  <br>
+
+  <p style="text-align: center;">Any time. Any where. At Single click</p><br>
+
+  <ion-grid>
+    <ion-row>
+    <ion-col size="4">
+      <ion-chip style="height: 60px;width: 100px;--background: white;">
+        <ion-avatar style="width: 100px;height: 60px;">
+          <img src="https://www.startupwala.com/images/pan-tan-registration.svg">
+        </ion-avatar>
+        <ion-label></ion-label>
+      </ion-chip>
+    </ion-col>
+  
+    <ion-col size="4">
+      <ion-chip style="height: 60px;width: 100px;--background: white;margin-left: 30px;">
+        <ion-label style="font-size: 20px;">+</ion-label>
+        <ion-avatar style="width: 20px;height: 40px;">
+        </ion-avatar>
+      </ion-chip>
+    </ion-col>
+  
+    <ion-col size="3">
+      <ion-chip style="height: 60px;width: 100px;--background: white;">
+        <ion-avatar style="width: 120px;height: 80px;margin-right: 30px;">
+        <img src="https://www.startupwala.com/images/mobile_nav_10.png">
+        </ion-avatar>
+        </ion-chip>
+    </ion-col>
+    </ion-row>
+    </ion-grid>
+  
+    <ion-grid>
+    <ion-row>
+    <ion-col size="6">
+      <div>
+      <p style="font-size: 12px;margin-left: 8px;">09765490711/9765490591</p>
+      </div>
+      </ion-col>
+      
+      <ion-col size="6">
+        <p style="font-size: 12px;margin-left: 45px;">Get 10% Discount</p>
+      </ion-col>
+      </ion-row>
+      </ion-grid>
+    </div>
+
+  <!--Special Recharge-->
+
+  <div *ngIf="segmentModel === 'Benifits'">
+
+    <ion-card style="margin-bottom: 25px;">    
+          <ion-row (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}" 
+          style="width: 234px;height: 70px;">
+          <ion-col size="3" style="margin-bottom: 10px;">
+          <img src="https://www.startupwala.com/images/limited-liability-protection-to-directors-personal-assets.svg" 
+          style="height:50px;width:60px;margin-bottom: 0em;text-align: left;">
+          </ion-col>
+          <ion-col>
+          <div>
+          <p>Limited Liability Protection to Directors</p>
+          </div>
+          </ion-col>
+       <ion-icon class="left" class="left" [name]="isGroupShown(i) ? 'chevron-up-outline' : 'chevron-down-outline'" 
+        style="margin-top: 25px;color: gray;text-align: end;" >
+        </ion-icon>
+      </ion-row>
+      <ion-card-content *ngIf="isGroupShown(i)" style="font-size: 12px;margin-left: 10px;margin-right: 5px;
+      margin-bottom: 10px;text-align: justify;color: black;">                  
+        Many times startups need to borrow money and take things on credit. In case of normal Partnerships,
+        Partners personal savings and property would be at risk incase business is not able to repay its loans.
+         In a private limited company, only investment in business is lost, personal assets of the directors are
+          safe.             
+    </ion-card-content>
+  </ion-card>
+  
+       
+    <ion-card style="margin-bottom: 25px;">    
+      <ion-row (click)="toggleGroup1(i)" [ngClass]="{active: isGroupShown1(i)}"
+      style="width: 234px;height: 70px;">
+      <ion-col size="3" style="margin-bottom: 10px;">
+      
+      <img src="https://www.startupwala.com/images/better-image-and-credibility-in-market.svg" 
+      style="height:50px;width:60px;margin-bottom: 0em;text-align: left;">
+      
+      </ion-col>
+      <ion-col>
+      <div>
+      <p>Better image and credibility in Market</p>
+      </div>
+      </ion-col>
+   <ion-icon class="left" class="left" [name]="isGroupShown1(i) ? 'chevron-up-outline' : 'chevron-down-outline'" 
+    style="margin-top: 25px;color: gray;text-align: end;">
+    </ion-icon>
+  </ion-row>
+  <ion-card-content *ngIf="isGroupShown1(i)" style="font-size: 12px;margin-left: 10px;margin-right: 5px;
+  margin-bottom: 10px;text-align: justify;color: black;">                  
+    Private limited company is popular and well known business structure. Corporate Customers, 
+    Vendors and Govt. Agencies prefer to deal with Private Limited Company instead of proprietorship or 
+    normal partnerships.           
+</ion-card-content>
+</ion-card>
+
+
+<ion-card style="margin-bottom: 25px;">    
+<ion-row (click)="toggleGroup2(i)" [ngClass]="{active: isGroupShown2(i)}"
+style="width: 234px;height: 70px;">
+<ion-col size="3" style="margin-bottom: 10px;">
+
+<img src="https://www.startupwala.com/images/easy-to-raise-funds-and-loans.svg" 
+style="height:50px;width:60px;margin-bottom: 0em;text-align: left;">
+
+</ion-col>
+<ion-col>
+<div>
+  <p>Easy to raise funds and loans</p>
+</div>
+</ion-col>
+<ion-icon class="left" [name]="isGroupShown2(i) ? 'chevron-up-outline' : 'chevron-down-outline'" 
+style="margin-top: 25px;color: gray;text-align: end;">
+</ion-icon>
+</ion-row>
+<ion-card-content *ngIf="isGroupShown2(i)" style="font-size: 12px;margin-left: 10px;margin-right: 5px;
+margin-bottom: 10px;text-align: justify;color: black;">                  
+Pvt. Ltd. company enjoys wide options to raise funds through bank loans, Angel Investors, 
+Venture Capitalists, in comparison to LLPs and OPCs.             
+</ion-card-content>
+</ion-card>
+
+<ion-card style="margin-bottom: 25px;">    
+<ion-row (click)="toggleGroup3(i)" [ngClass]="{active: isGroupShown3(i)}"
+style="width: 234px;height: 70px;">
+<ion-col size="3" style="margin-bottom: 10px;">
+<img src="https://www.startupwala.com/images/favorite-business-structure-for-investors.svg" 
+style="height:50px;width:60px;margin-bottom: 0em;text-align: left;">
+</ion-col>
+<ion-col>
+<div>
+  <p>Favorite Business structure for Investors</p>
+</div>
+</ion-col>
+<ion-icon class="left"class="left" [name]="isGroupShown3(i) ? 'chevron-up-outline' : 'chevron-down-outline'" 
+style="margin-top: 25px;color: gray;text-align: end;">
+</ion-icon>
+</ion-row>
+<ion-card-content *ngIf="isGroupShown3(i)" style="font-size: 12px;margin-left: 10px;margin-right: 5px;
+margin-bottom: 10px;text-align: justify;color: black;">                  
+Investors love to invest in Private Limited companies as it is well structured and less strings attached.
+Most important it is very easy to exit from a private limited company.     
+</ion-card-content>
+</ion-card>
+
+
+<ion-card style="margin-bottom: 25px;">    
+<ion-row (click)="toggleGroup4(i)" [ngClass]="{active: isGroupShown4(i)}"
+style="width: 234px;height: 70px;">
+<ion-col size="3" style="margin-bottom: 10px;">
+<img src="https://www.startupwala.com/images/easy-to-attract-employees.svg" 
+style="height:50px;width:60px;margin-bottom: 0em;text-align: left;">
+</ion-col>
+<ion-col>
+<div>
+  <p>Easy to attract Employees</p>
+</div>
+</ion-col>
+<ion-icon class="left"class="left" [name]="isGroupShown4(i) ? 'chevron-up-outline' : 'chevron-down-outline'" 
+style="margin-top: 25px;color: gray;text-align: end;">
+</ion-icon>
+</ion-row>
+<ion-card-content *ngIf="isGroupShown4(i)" style="font-size: 12px;margin-left: 10px;margin-right: 5px;
+margin-bottom: 10px;text-align: justify;color: black;">                  
+For startups putting together a team and keeping them for long time is a challenge, due to 
+confidence attached to private limited structure, it is easy to hire people as well as motivate them 
+with corporate designations and stock options.     
+</ion-card-content>
+</ion-card>
+
+
+<ion-card style="margin-bottom: 25px;">    
+<ion-row (click)="toggleGroup5(i)" [ngClass]="{active: isGroupShown5(i)}"
+style="width: 234px;height: 70px;">
+<ion-col size="3" style="margin-bottom: 10px;">
+<img src="https://www.startupwala.com/images/easy-to-sell.svg" 
+style="height:50px;width:60px;margin-bottom: 0em;text-align: left;">
+</ion-col>
+<ion-col>
+<div>
+  <p>Easy to Sell</p>
+</div>
+</ion-col>
+<ion-icon class="left"class="left" [name]="isGroupShown5(i) ? 'chevron-up-outline' : 'chevron-down-outline'" 
+style="margin-top: 25px;color: gray;text-align: end;">
+</ion-icon>
+</ion-row>
+<ion-card-content *ngIf="isGroupShown5(i)" style="font-size: 12px;margin-left: 10px;margin-right: 5px;
+margin-bottom: 10px;text-align: justify;color: black;">                  
+Private Ltd. is easy to sell, very less documentation and cost is involved in selling 
+a Pvt. Ltd. company.   
+</ion-card-content>
+</ion-card>
+        
+</div>
+
+<!-- -------pre-req---- -->
+<div *ngIf="segmentModel === 'Pre-requisites'">
+  
+  <div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline"
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>Minimum 2 shareholders</ion-label></div>
+
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>Minimum 2 directors</ion-label></div>
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>The directors and shareholders can be
+same person</ion-label></div>
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>One of the Directors must be Indian 
+  Resident</ion-label></div>
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>DIN (Director Identification Number) 
+   for all Directors</ion-label></div>
+<br>
+<div class="container" style="text-align: start;">
+  <ion-icon name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>DSC (Digital Signature Certificate) for 
+ all Promoters</ion-label></div>
+<br>
+</div>
+<!--delvrbles-->
+
+<div *ngIf="segmentModel === 'Deliverables'">
+
+  <div class="container" style="text-align: start;">
+    <ion-icon class="left"name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>DIN for 2 Directors</ion-label></div>
+  <br>
+ 
+  <div class="container" style="text-align: start;">
+    <ion-icon class="left"name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>Digital Signature Token for all Promoters
+  </ion-label></div>
+<br>
+
+<div class="container" style="text-align: start;">
+  <ion-icon class="left"name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>Company name approval</ion-label></div>
+<br>
+
+<div class="container" style="text-align: start;">
+  <ion-icon class="left"name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>MOA + AOA</ion-label></div>  
+<br>
+
+<div class="container" style="text-align: start;">
+  <ion-icon class="left"name="checkmark-circle-outline" 
+  style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+<ion-label>Incorporation Certificate</ion-label></div>
+  <br>
+
+  <div class="container" style="text-align: start;">
+    <ion-icon class="left"name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>New Incorporation Kit</ion-label></div>
+<br>
+
+  <div class="container" style="text-align: start;">
+    <ion-icon class="left"name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+  <ion-label>Customized Incorporation Master File</ion-label></div>
+   <br>
+   <div class="container" style="text-align: start;">
+    <ion-icon class="left"name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+    <ion-label>Company PAN Card</ion-label></div>
+      <br>
+
+      <div class="container" style="text-align: start;">
+        <ion-icon class="left"name="checkmark-circle-outline" 
+        style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+      <ion-label>Company TAN/TDS Number</ion-label></div>
+    <br>
+
+    <div class="container" style="text-align: start;">
+    <ion-icon class="left"name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+    <ion-label>Bank Account Opening Document 
+    Support</ion-label></div>
+    <br>
+    <div class="container" style="text-align: start;">
+    <ion-icon class="left"name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+    <ion-label>Domain Name for 1 year + Web
+      Hosting + 0 Email Ids <ion-text style="margin-left: 30px;">for 1 year OR</ion-text></ion-label></div>
+      <br>
+    
+    <div class="container" style="text-align: start;">
+    <ion-icon class="left"name="checkmark-circle-outline" 
+    style="position: initial;margin-right: 15px;font-size: initial;color: blue;"></ion-icon>
+    <ion-label>Online Accounting Software for 1 year</ion-label></div>
+     <br>
+     <br>
+</div>
+
+
+
+
+  
+<div *ngIf="segmentModel === 'FAQs'" >
+
+  <ion-list>
+    <ion-card>
+      <ion-item >
+      <h6 (click)="toggleGroup(i)" [ngClass]="{active: isGroupShown(i)}" style="color: black;font-size: 13px;">
+        1. What is Closure of One Person Company?   
+       <ion-icon class="left" [name]="isGroupShown(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+       style="color: gray;;font-size: 15px;">
+      </ion-icon>
+      <p *ngIf="isGroupShown(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+      margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+      When existence of the Company as a legal entity comes to an end it is known as the Closure of the Company.
+      </p></h6>
+      </ion-item>
+      </ion-card>
+  
+      <ion-card>
+        <ion-item>
+        <h6 (click)="toggleGroup1(i)" [ngClass]="{active: isGroupShown1(i)}" style="color: black;font-size: 13px;">
+          2. What is the difference between Closure,
+            Winding up, Dissolution of Company?
+       <ion-icon class="left" [name]="isGroupShown1(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+         style="color: gray;font-size: 15px;">
+        </ion-icon>
+        <p *ngIf="isGroupShown1(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+        margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+         Closure of the company is done voluntarily and is done through the fast track exit scheme.
+        - Winding up of the company may be voluntary or by the order of the Court by appointing an official liquidator to monitor the process of winding up.
+        - Dissolution is initiated by the Court for ending the legal existence of the Company.
+        </p></h6>
+        </ion-item>
+        </ion-card>
+  
+        <ion-card>
+        <ion-item>
+          <h6 (click)="toggleGroup2(i)" [ngClass]="{active: isGroupShown2(i)}" style="color: black;font-size: 13px;">
+          3. Why ROC filing is required for Closing a Company?      
+         <ion-icon class="left" [name]="isGroupShown2(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+           style="color: gray;font-size: 15px;">
+          </ion-icon>
+          <p *ngIf="isGroupShown2(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+          margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+          It is necessary to file Closure with the ROC as ROC or MCA data base need to be updated and the Company
+           is free from all its legal compliances as it is officially closed.
+          Even though business of the company is closed, unless closure documents 
+          are filed and approved by the ROC, company is not legally closed and the company needs to file all the regular returns.
+          </p></h6>
+          </ion-item>
+          </ion-card>
+  
+          <ion-card>
+          <ion-item>
+            <h6 (click)="toggleGroup3(i)" [ngClass]="{active: isGroupShown3(i)}" style="color: black;font-size: 13px;">
+              4. What is Fast Track Exit (FTE) Scheme?
+             <ion-icon class="left" [name]="isGroupShown3(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+             style="color: gray;font-size: 15px;">
+            </ion-icon>
+            <p *ngIf="isGroupShown3(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+            margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+            FTE is a company closure scheme initiated by MCA for easy and faster closure of Company.
+            </p></h6>
+            </ion-item>
+            </ion-card>
+           
+            <ion-card>
+            <ion-item>
+              <h6 (click)="toggleGroup4(i)" [ngClass]="{active: isGroupShown4(i)}" style="color: black;font-size: 13px;">
+                5. Which Company is eligible to apply for Closure of Company?
+               <ion-icon class="left" [name]="isGroupShown4(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+               style="color: gray;font-size: 15px;">
+              </ion-icon>
+              <p *ngIf="isGroupShown4(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+              margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+            Any Company which is not a Section 8 Company and has been inoperative for more than 1 year from
+             the date of its incorporation can apply for Closure of Company under FTE scheme.
+              </p></h6>
+              </ion-item>
+              </ion-card>
+              
+              <ion-card>
+              <ion-item>
+                <h6 (click)="toggleGroup5(i)" [ngClass]="{active: isGroupShown5(i)}" style="color: black;font-size: 13px;">
+                  6. What are the expenses and cost involved in 
+                    Closing a Company?
+               <ion-icon class="left" [name]="isGroupShown5(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+                 style="color: gray;font-size: 15px;">
+                </ion-icon>
+                <p *ngIf="isGroupShown5(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+                margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+              The filing fees for Form FTE is Rs. 5000.
+              Fill the above details and submit. You will get documents in 1 minute.
+                </p></h6>
+                </ion-item>
+                </ion-card>
+  
+                <ion-card>
+                  <ion-item>
+                    <h6 (click)="toggleGroup6(i)" [ngClass]="{active: isGroupShown6(i)}" style="color: black;font-size: 13px;">
+                      7. What documents are required for Closure of Company?               
+                   <ion-icon class="left" [name]="isGroupShown6(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+                     style="color: gray;font-size: 15px;">
+                    </ion-icon>
+                    <p *ngIf="isGroupShown6(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+                    margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+                    Application for Striking off of the Company, Board Resolution for closure, Consent 
+                    of Directors, Director's Affidavit, Indemnity Bond, Statement of Assets and Liabilities.
+                    </p></h6>
+                    </ion-item>
+                    </ion-card>
+    
+                  
+                 <ion-card>
+                  <ion-item>
+                  <h6 (click)="toggleGroup7(i)" [ngClass]="{active: isGroupShown7(i)}" style="color: black;font-size: 13px;">
+                    8. What Forms to be filed for Closing Company under Easy Exit Scheme of 
+                      ROC?
+                 <ion-icon class="left" [name]="isGroupShown7(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+                  style="color: gray;font-size: 15px;">
+                  </ion-icon>
+                <p *ngIf="isGroupShown7(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+                 margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+                Form FTE
+                </p></h6>
+                </ion-item>
+                </ion-card>
+                  
+                
+                <ion-card>
+                <ion-item>
+                <h6 (click)="toggleGroup8(i)" [ngClass]="{active: isGroupShown8(i)}" style="color: black;font-size: 13px;">
+                  9. What is time limit to file Closure documents with ROC?
+                 <ion-icon class="left" [name]="isGroupShown8(i) ? 'chevron-up-outline' : 'chevron-down-outline'" slot="end"
+                style="color: gray;font-size: 15px;">
+                </ion-icon>
+                <p *ngIf="isGroupShown8(i)" style="font-size: 12px;margin-top: 20px;margin-right: 20px;
+                margin-bottom: 10px;text-align: left;margin-left:10px;color: black;"> 
+                The Form has to filled be filed with ROC office within 30 days from the date of 
+                Signing of the Statement of Assets and Liabilities.
+                </p></h6>
+                </ion-item>
+                </ion-card>
+<br>
+<br>
+          </ion-list>
+          </div>
+
+</ion-content>
+
+
+

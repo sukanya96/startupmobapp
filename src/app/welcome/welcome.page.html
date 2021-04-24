@@ -1,0 +1,49 @@
+<ion-content class="ion-text-center">
+
+ <ion-slides pager="true" [options]="slideOpts" #mySlider>
+  <ion-slide>
+    <h2>
+      Welcome to StartupwalaCA
+    </h2>
+    <img src="../../assets/gif/welcome1.gif" style="height: 378px;" > 
+    
+</ion-slide>
+   <ion-slide>
+   
+    <h2 style="font-size: 18px;">Start your Own Business through app</h2>
+    <img src="../../assets/gif/startup.gif" style="max-width:100%;max-height:80%;height: 363px;">
+
+    <p style="color: #036ED9;font-size: 18px;font-weight: bold;padding-top: 70px;"
+     (click)="swipeNext()">Skip</p>
+  </ion-slide>
+
+  <ion-slide>
+   
+    <h2 style="font-size: 18px;">Creative thinking achieves the growth of the company at the best level</h2>
+    <img src="../../assets/gif/slide3.gif" style="max-width:100%;max-height:80%;">
+
+    <p style="color: #036ED9;font-size: 18px;font-weight: bold;padding-top: 50px;" 
+    (click)="swipeNext()">Skip</p>
+  </ion-slide> 
+
+  <ion-slide>
+   
+    <h2 style="font-size: 18px;">Ups and downs comes but having the patience can achieve the goals</h2>
+    
+    <img src="../../assets/gif/progress.gif" style="max-width:100%;max-height:80%;">
+
+    <p style="color: #036ED9;font-size: 18px;font-weight: bold;padding-top: 50px;" 
+    [routerLink]="['/login']">Already got it</p>
+
+  </ion-slide>
+</ion-slides>
+
+</ion-content>
+
+<ion-footer style="text-align: center;">
+  <ion-toolbar style="--background:#753a88!important;color: white;--min-height: 50px;"
+   [routerLink]="['/login']">
+    Get Started
+    </ion-toolbar>
+    </ion-footer>
+

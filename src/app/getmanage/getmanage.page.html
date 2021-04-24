@@ -1,0 +1,94 @@
+
+  <ion-header>
+    <ion-toolbar style="--background:#753a88!important;--border-width:1px;">
+      <ion-buttons slot="start">
+        <ion-icon name="chevron-back-outline" style="font-size:23px;color: white;" routerLink="/manage-business"></ion-icon>
+        <h5 style="color: white;margin-left:15px;">Get Quote</h5>
+        </ion-buttons>
+       </ion-toolbar>
+     </ion-header>
+
+<ion-content class="ion-padding">
+  
+  <form [formGroup]="formcontrol" (ngSubmit)="grab()">
+
+  <h5>Fill & Get Documents in 1 Minute to start ISO Certification and MSME Registration</h5>
+
+  <ion-item transparent>  
+    <ion-icon name="person"></ion-icon>  
+    <ion-input placeholder="Full Name" type="text" formControlName="fullname"></ion-input>
+  </ion-item>
+
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.fullname.errors?.required">
+    Name is required.
+  </span>
+ 
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.fullname.errors?.minlength">
+    Name must be at least 5 characters long.
+  </span>
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.fullname.errors?.pattern">
+    Name must contain only letters.
+  </span>
+ 
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.fullname.errors?.maxlength">
+    Name cannot be more than 20 characters long.
+  </span>
+ 
+
+  <ion-item transparent>
+      
+    <ion-icon name="call"></ion-icon>
+    
+    <ion-input placeholder="Mobile Number" type="number" formControlName="phone"></ion-input>
+     
+  </ion-item>
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.phone.errors?.required">
+    Mobile number is required.
+  </span>
+ 
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.phone.errors?.pattern">
+    Please enter 10 digit phone number
+  </span>
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.phone.errors?.maxLength">
+ mobile number not valid</span>
+ <span class="error ion-padding" *ngIf="isSubmitted && errorControl.phone.errors?.minLength">
+  Please enter 10 digit phone number
+   </span>
+
+
+  <ion-item transparent>
+      
+    <ion-icon name="mail"></ion-icon>
+    
+    <ion-input placeholder="Email" type="text" formControlName="email"></ion-input>
+     
+  </ion-item>
+  
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+    Email required
+  </span>
+ 
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+    Please enter Valid Email
+  </span>
+
+  <ion-item transparent>
+      
+    <ion-icon name="location"></ion-icon>
+    
+    <ion-input placeholder="City Name" type="text" formControlName="CityName"></ion-input>
+     
+  </ion-item>
+  
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.CityName.errors?.required">
+    City Name required
+  </span>
+
+</form>
+  </ion-content>
+
+  <ion-footer>
+   
+    <ion-button (click)="grab()" class="ion-button-class" 
+    expand="block" style="--background:#753a88!important;">Get Started</ion-button>
+  </ion-footer>

@@ -1,0 +1,63 @@
+.bg-class{
+    --background:linear-gradient(197deg,#2d75b8 0% ,13.5%, #753a88)!important;
+  }
+  *{
+    font-family: 'sarala';
+  }
+  ion-content{
+   // --background: url('../assets/profile.jpg') no-repeat 100% 100%;
+  // --background: url(/assets/profile2.jpg) no-repeat center/cover fixed;
+  }
+  .top-head{
+    margin-top: 41px;
+  }
+  .my-info-icon{
+    font-size: 15px;
+  }
+  ion-card-content{
+    color: black;
+  }
+
+  h2{
+    font-weight: 500;
+  }
+  ion-avatar{
+    display:block;
+    margin:0 auto;
+    height: 89px;
+    width: 87px;
+  }
+  .camera-icon{
+    padding: 3px 3px 3px 3px;
+    /* position: absolute; */
+    display: block;
+    left: 60%;
+    font-size: 22px;
+    color: white;
+    background: #753a88;
+    border-radius: 64%;
+    position: relative;
+    margin: -30px 0px 0px -14px;
+  }
+  ion-toolbar{
+   --background:#753a88!important;
+  }
+  // ion-item{
+  //   ion-label{
+
+  //     font-family: 'sarala';
+  //     padding-top: 20px;
+
+  //   }
+  // }
+  .tag{
+    h4{
+   text-align: center ;
+   font-size: 19px;
+    }
+  }
+  
+  ion-label{
+    font-family: 'sarala';
+  }
+  

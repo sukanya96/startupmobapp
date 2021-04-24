@@ -1,0 +1,64 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="padding-bottom: 35px;">
+    <img src="../../assets/gif/logo.png">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+
+  <div class="ion-padding">
+    
+  <form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
+  
+    <div class="wrap-input"> 
+      <!-- <ion-label position="stacked">Name</ion-label> -->
+      <ion-input formControlName="name" placeholder="Full Name" type="text" [(ngModel)]="user.name"
+     ></ion-input>
+    </div>
+
+    <div class="validation_message">
+      <div no-lines class="no-line error"
+       *ngIf="!registerForm.controls.name.valid  && (registerForm.controls.name.dirty || isSubmitted) && !registerForm.controls.name.pending">
+      <p *ngIf="registerForm.value.name != ''">Name required</p>
+            </div>
+            </div>      
+
+      <div class="wrap-input"> 
+      <!-- <ion-label position="stacked">Email</ion-label> -->
+      <ion-input formControlName="email" placeholder="Email" type="text" [(ngModel)]="user.email"></ion-input>
+      </div>
+
+    <div class="validation_message">
+      <div no-lines class="no-line error"
+       *ngIf="!registerForm.controls.email.valid  && (registerForm.controls.email.dirty || isSubmitted) && !registerForm.controls.email.pending">
+        <p *ngIf="registerForm.value.email != ''">Email required</p>    
+         </div>
+        </div>    
+
+      <div class="wrap-input"> 
+      <!-- <ion-label position="stacked">Password</ion-label> -->
+      <ion-input formControlName="password" placeholder="Password" [(ngModel)]="user.password"
+      type="password"></ion-input>
+      </div>
+
+    <div class="validation_message">
+      <div no-lines class="no-line error"
+       *ngIf="!registerForm.controls.password.valid  && (registerForm.controls.password.dirty || isSubmitted) && !registerForm.controls.password.pending">
+          <p *ngIf="registerForm.value.password != ''">Password required</p> 
+          </div>
+          </div>    
+
+            <div class="container-form-btn">
+              <ion-button class="ion-button-class form-btn" expand="round" side="bottom"
+              (click)="register()">Register</ion-button> 
+              </div>   
+    <!-- <ion-button (click)="register()">Register</ion-button> -->
+</form>
+</div> 
+
+<ion-toolbar>
+    <p class="ion-text-center" style="color: #753a88;font-size: 15px;padding-left: 0px;">Already have an account? 
+      <a routerLink="/login" style="text-decoration: none;color: black;">Sign In</a></p>
+ </ion-toolbar>
+
+</ion-content>

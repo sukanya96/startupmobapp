@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" [routerLink]="['/reg']">
+      <ion-button class="backbtn" routerDirection="backward">
+        <ion-icon name="arrow-back-outline" style="color: white;" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  
+  <ion-content class="ion-padding"> 
+
+    <form [formGroup]="formcontrol">
+
+    <div class="ion-padding container">
+
+      <div class="login-form ">
+          
+      <h3 style="text-align: center;">Login</h3>
+
+      <input type="text" placeholder="Email"  required>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+        Email is required.
+      </span>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+        Please enter valid email
+      </span>
+
+      <input [type]="fieldTextType ? 'text' : 'password'" placeholder="Password" 
+      required>
+      <i class="far" [ngClass]="fieldTextType ? 'fa-eye': 'fa-eye-slash'" 
+      (click)="toggleFieldTextType()" >
+      </i>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.required">
+        password is required.
+      </span>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.minlength">
+        password must be at least 6 characters long.
+      </span>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.maxlength">
+        password cannot be more than 10 characters long.
+      </span>
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.maxLength">
+        password should be greater than 6
+      </span>
+      </div>
+
+      <ion-button class="ion-button-class" expand="block" side="bottom"
+      (click)="login()" style="--background:#3a9177;margin:0 auto;margin-top: 130px;
+      --padding-top:25px;--padding-bottom:25px;font-weight: bold;">Sign in </ion-button> 
+  
+      </div>
+
+      </form>
+      
+    </ion-content>

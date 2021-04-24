@@ -1,0 +1,59 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <img src="../../assets/gif/logo.png">
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content fullscreen="true">
+
+  <div class="ion-padding" style="padding-top: 50px;">
+
+  <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+    
+    <div class="wrap-input"> 
+      <!-- <ion-label position="stacked">Email</ion-label> -->
+      <ion-input formControlName="email" type="text" placeholder="Email" [(ngModel)]="user.email"></ion-input>
+    </div>
+
+    <div class="validation_message">
+      <div no-lines class="no-line error"
+       *ngIf="!loginForm.controls.email.valid  && (loginForm.controls.email.dirty || isSubmitted) && !loginForm.controls.email.pending">
+      <p *ngIf="loginForm.value.email != ''">Email required</p>
+        </div>
+        </div>      
+
+
+    <div class="wrap-input"> 
+      <!-- <ion-label position="stacked">Password</ion-label> -->
+      <ion-input formControlName="password" type="password" placeholder="Password" [(ngModel)]="user.password"></ion-input>
+    </div>
+
+    <div class="validation_message">
+      <div no-lines class="no-line error"
+       *ngIf="!loginForm.controls.password.valid  && (loginForm.controls.password.dirty || isSubmitted) && !loginForm.controls.password.pending">
+      <p *ngIf="loginForm.value.password != ''">Password required</p>             
+      </div>
+      </div>      
+           
+
+    <div class="container-form-btn">
+    <ion-button class="ion-button-class form-btn" expand="round" side="bottom"
+    (click)="login()">Login</ion-button> 
+    </div>   
+              
+    <div routerLink="/forget">
+    <h5 style="font-size: 17px;text-align: center;" >
+    or <a style="color: purple;">Forgot Password</a> </h5>
+    </div>
+  
+  </form>
+  </div>
+
+  <ion-toolbar>
+    <p class="ion-text-center" style="color: #753a88;font-size: 15px;padding-left: 0px;">
+      Dont have an account? 
+      <a routerLink="/register" style="text-decoration: none;color: black;">Sign Up</a></p>
+ </ion-toolbar>
+ 
+</ion-content>

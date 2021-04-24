@@ -1,0 +1,160 @@
+ <ion-header>
+  <ion-toolbar style="--background:#753a88!important;">
+    <ion-buttons slot="start">
+      <ion-menu-button style="color: white;"></ion-menu-button>
+      <ion-title style="color: white;font-size: 18px;">Start Your Business</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+<ion-list>
+  <ion-card>
+  <ion-item [routerLink]="['/pvt']" lines="none">
+    <ion-badge class="rotated" color="primary" slot="start">₹6,999</ion-badge>
+    <ion-row>
+    <ion-col>
+    <ion-label>
+    <ion-text>
+    <div class="container">
+      <h5 style="font-weight: 500;font-size: 18px;margin-top: 15px;">Pvt.Ltd Company</h5>
+    </div>
+    <div class="ion-text-wrap">
+    <p>Start your Pvt.Ltd. in 10days</p></div>
+    </ion-text></ion-label>
+    </ion-col>
+    </ion-row>
+    <ion-icon name="chevron-forward-outline" style="font-size: 18px;" slot="end"></ion-icon>
+    </ion-item>
+    </ion-card>
+  
+
+    <ion-card style="margin-top: 10px;">
+    <ion-item [routerLink]="['/one-prsn']" lines="none">
+      <ion-badge class="rotated" color="primary" slot="start">₹4,299</ion-badge>
+      <ion-row>
+      <ion-col>
+      <ion-label>
+      <ion-text>
+      <div class="container">
+      <h5 style="font-weight: 500;font-size: 18px;margin-top: 15px;">OPC Company</h5>
+      </div>
+      <div class="ion-text-wrap">
+      <p>Start your OPC in 10days</p></div>
+      </ion-text></ion-label>
+      </ion-col>
+      </ion-row>
+      <ion-icon name="chevron-forward-outline" style="font-size: 18px;" slot="end"></ion-icon>
+      </ion-item>
+      </ion-card>
+      
+      <ion-card style="margin-top: 10px;">
+      <ion-item [routerLink]="['/lmtd']" lines="none">
+        <ion-badge class="rotated" color="primary" slot="start">₹3,999</ion-badge>
+        <ion-row>
+        <ion-col>
+        <ion-label>
+        <ion-text>
+        <div class="container">
+        <h5 style="font-weight: 500;font-size: 18px;margin-top: 15px;">LLP</h5>
+        </div>
+        <div class="ion-text-wrap">
+        <p>Start your LLP in 20days</p></div>
+        </ion-text></ion-label>
+        </ion-col>
+        </ion-row>
+        <ion-icon name="chevron-forward-outline" style="font-size: 18px;" slot="end"></ion-icon>
+        </ion-item>
+        </ion-card>
+
+        <ion-card style="margin-top: 10px;">
+        <ion-item [routerLink]="['/gst']" lines="none">
+          <ion-badge class="rotated" color="primary" slot="start">₹1,999</ion-badge>
+          <ion-row>
+          <ion-col>
+          <ion-label>
+          <ion-text>
+          <div class="container">
+          <h5 style="font-weight: 500;font-size: 18px;margin-top: 15px;">GST Registration</h5>
+          </div>
+          <div class="ion-text-wrap">
+          <p>Get it in 1 day</p></div>
+          </ion-text></ion-label>
+          </ion-col>
+          </ion-row>
+          <ion-icon name="chevron-forward-outline" style="font-size: 18px;" slot="end"></ion-icon>
+          </ion-item>
+          </ion-card>
+
+          <ion-card style="margin-top: 10px;">
+          <ion-item [routerLink]="['/publc-lmtd']" lines="none">
+            <ion-badge class="rotated" color="primary" slot="start">₹24,999</ion-badge>
+            <ion-row>
+            <ion-col>
+            <ion-label>
+            <ion-text>
+            <div class="container">
+            <h5 style="font-weight: 500;font-size: 18px;margin-top: 15px;">Public Lmtd Company</h5>
+            </div>
+            <div class="ion-text-wrap">
+            <p>Start your Public.Ltd.in 40days</p></div>
+            </ion-text></ion-label>
+            </ion-col>
+            </ion-row>
+            <ion-icon name="chevron-forward-outline" style="font-size: 18px;" slot="end"></ion-icon>
+            </ion-item>
+            </ion-card>
+            
+            <ion-card style="margin-top: 10px;">
+            <ion-item [routerLink]="['/section']" lines="none">
+            <ion-badge class="rotated" color="primary" slot="start">₹19,999</ion-badge>
+              <ion-row>
+              <ion-col>
+              <ion-label>
+              <ion-text>
+              <div class="container">
+              <h5 style="font-weight: 500;font-size: 18px;margin-top: 15px;">Section 8 NGO Company</h5>
+              </div>
+              <div class="ion-text-wrap">
+              <p>Start your NGO in 40days</p></div>
+              </ion-text></ion-label>
+              </ion-col>
+              </ion-row>
+              <ion-icon name="chevron-forward-outline" style="font-size: 18px;" slot="end"></ion-icon>
+              </ion-item>
+              </ion-card>
+
+  </ion-list>
+</ion-content>
+
+
+<!-- ---------------------Footer-------------------------------------- -->
+<ion-toolbar>
+  <ion-tabs>
+  
+    <ion-tab-bar slot="bottom" color="purple" routerLink="/dashboard">
+      <ion-tab-button tab="tab1">
+        <ion-icon name="home-outline" color="light"></ion-icon>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="tab2"  >
+        <ion-icon name="search" color="light" ></ion-icon>
+      </ion-tab-button>
+  
+      <!-- <ion-tab-button tab="tab3" class="custom-tab">
+        <ion-icon name="add" style="color: white;"></ion-icon>
+      </ion-tab-button> -->
+  
+      <ion-tab-button tab="tab4"  >
+        <ion-icon name="chatbox-ellipses-outline" color="light" ></ion-icon>
+        <ion-badge>9</ion-badge>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="tab5" (click)="openModal2()">
+        <ion-icon name="person-circle-outline"color="light" ></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  
+    </ion-tabs>
+    </ion-toolbar>

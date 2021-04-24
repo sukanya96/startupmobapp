@@ -1,0 +1,132 @@
+
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+* {
+	box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+
+}
+// body {
+// 	margin: 0;
+// 	padding: 0;
+// 	font-family: 'Raleway', sans-serif;
+// }
+
+.box {
+	display: flex;
+	background-color: white;
+	justify-content: center;
+	background-image: white;
+	height: 500px;
+	width: 400px;
+}
+.login-form input[type = "text"] {
+	width: 100%;
+	border: none;
+ //	text-align: center;
+    margin: 0;
+	//border-radius: 24px;
+  	font-size: 18px;
+  	font-family: 'Raleway', sans-seriff;
+	background-color: gainsboro;
+	padding: 15px;
+	
+} 
+.login-form input{
+	outline:none;
+}
+
+.login-form input[type = "password"]{
+	width: 100%;
+	border: none;
+ //	text-align: center;
+	//border-radius: 24px;
+  	font-size: 18px;
+  	font-family: 'Raleway', sans-seriff;
+	background-color: gainsboro;
+	padding: 15px;
+}
+.sign-up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .ion-button-class{
+    text-transform: inherit;
+    
+  }
+
+// .login-form {
+// 	min-width: 300px;
+// 	max-width: 300px;
+// 	border-radius: 24px;
+// 	background-color: white;
+  
+// }
+.login-form {
+    padding-top: 20px;
+    
+    ion-input{
+          padding: 0 0 0 10px;
+          font-size: 16px;
+         
+        }
+    
+  }
+ion-content{
+	text-align: center;
+	//--padding-start:350px;
+	//--padding-end:350px;
+}
+
+.login-form input[type = "text"] {
+	margin-top: 30px;
+}
+
+.login-form input[type = "password"] {
+	margin-top: 30px;
+}
+
+.login-form input[type = "submit"] {
+	background-color:  #E0E0E0;
+	background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+	width: 100%;
+	color: white;
+  	border: none;
+	margin-top: 35px;
+	padding: 10px;
+  	font-family: 'Raleway', sans-seriff;
+  	font-size: 1.3rem;
+	font-weight: bold;
+	border-radius: 24px;
+	transition: 0.25s;
+}
+span{
+	font-family: initial;
+	font-size: 12px;
+	color: red;
+}
+
+.links {
+	margin-top: 10px;
+	display: block;
+}
+.login-form h3 {
+	text-align: center;
+	font-size: 2.2rem;
+}
+
+
+
+
+
+
+
+ 
+
+
+  
+
+
+
+
+

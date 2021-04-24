@@ -1,0 +1,146 @@
+
+  <ion-header>
+    <ion-toolbar style="--background:#753a88!important;--border-color:white;--border-width:1px;">
+      <ion-buttons slot="start">
+        <ion-icon name="chevron-back-outline" style="font-size:23px;color: white;" [routerLink]="['/dashboard']"></ion-icon>
+        <h4 style="color: white;margin-left: 60px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Make Payment</h4>
+        </ion-buttons>
+       </ion-toolbar>
+     </ion-header>
+
+<ion-content>
+  
+  <form [formGroup]="formcontrol" (ngSubmit)="payment(formcontrol.value)">
+
+  <div class="center" style="margin-top: 30px;">
+
+  <ion-item transparent>  
+    <ion-label position="floating" color="dark">  
+      <ion-icon name="person" style="padding-right: 10px;font-size: 20px;">
+      </ion-icon>Full Name</ion-label>
+    <ion-input type="text" formControlName="name" [(ngModel)]="user.name"></ion-input>
+  </ion-item>
+
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
+    Name is required.
+  </span>
+ 
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.pattern">
+    Name must contain only letters.
+  </span>
+ 
+
+  <ion-item transparent>
+
+    <ion-label position="floating" color="dark">  
+    <ion-icon name="call" style="padding-right: 10px;font-size: 20px;"></ion-icon>
+    Mobile Number</ion-label>
+    
+    <ion-input type="number" formControlName="phone" [(ngModel)]="user.phone"></ion-input>
+     
+  </ion-item>
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.phone.errors?.required">
+    Mobile number is required.
+  </span>
+ 
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.phone.errors?.pattern">
+    Please enter 10 digit phone number
+  </span>
+  
+
+
+  <ion-item transparent>
+      
+    <ion-label position="floating" color="dark">
+    <ion-icon name="mail" style="padding-right: 15px;font-size: 20px;">
+    </ion-icon>Email</ion-label>
+    <ion-input type="text" formControlName="email" [(ngModel)]="user.email"></ion-input>
+     
+  </ion-item>
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+    Email required
+  </span>
+ 
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+    Please enter Valid Email
+  </span>
+ 
+
+  <ion-item transparent>
+    <ion-label position="floating" color="dark">
+      <ion-icon name="location" style="padding-right: 10px;font-size: 20px;"></ion-icon>
+        City Name</ion-label>
+    <ion-input type="text" formControlName="city" [(ngModel)]="user.city"></ion-input>
+  </ion-item>
+  
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.city.errors?.required">
+    CityName required
+  </span>
+
+  <ion-item transparent lines="none">
+  <ion-label style="font-size: 16px;padding-top: 15px;padding-left: 13px;">Or Use Current Location
+  
+  <ion-icon name="locate" style="font-size: 20px;padding-left: 16px;">
+    Yur location : {{address}}</ion-icon></ion-label>
+    </ion-item>
+
+  <ion-item transparent>
+    <ion-label position="floating" color="dark">  
+      <span style="padding-right: 15px;font-size: 18px;padding-left: 5px;">&#8377;</span>
+      Amount</ion-label>
+    <ion-input style="--padding-start: 10px;" type="number" formControlName="amount" 
+    [(ngModel)]="user.amount"></ion-input>
+
+  </ion-item>
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.amount.errors?.required">
+    amount required
+  </span>
+  
+
+  <ion-item>
+    <ion-icon name="business"></ion-icon>
+    <ion-label style="padding-left: 10px;">Select Company</ion-label>
+    <ion-select  formControlName="company" [(ngModel)]="user.company"
+      value="Pvt. Ltd. Registration" > 
+      <ion-select-option value="Pvt. Ltd. Registration">Pvt. Ltd. Registration</ion-select-option>
+      <ion-select-option value="One Person Company Registration">One Person Company Registration</ion-select-option>
+      <ion-select-option value="LLP Registration">LLP Registration</ion-select-option>
+      <ion-select-option value="GST Registration">GST Registration</ion-select-option>
+      <ion-select-option value="Public Ltd. Registration">Public Ltd. Registration</ion-select-option>
+      <ion-select-option value="Sec.8 Company/NGO">Sec.8 Company/NGO</ion-select-option>
+      <ion-select-option value="Trademark Registration">Trademark Registration</ion-select-option>
+      <ion-select-option value="Reply to Trademark Objection">Reply to Trademark Objection</ion-select-option>
+      <ion-select-option value="Trademark Renewal">Trademark Renewal</ion-select-option>
+      <ion-select-option value="Trademark Licensing">Trademark Licensing</ion-select-option>
+      <ion-select-option value="Trademark Selling">Trademark Selling</ion-select-option>
+      <ion-select-option value="Copyright Registration">Copyright Registration</ion-select-option>
+      <ion-select-option value="Reply to Copyright Objection">Reply to Copyright Objection</ion-select-option>
+      <ion-select-option value="Pvt.Ltd.ROC Filing">Pvt.Ltd.ROC Filing</ion-select-option>
+      <ion-select-option value="OPC ROC Filing">OPC ROC Filing</ion-select-option>
+      <ion-select-option value="LLP ROC Filing">LLP ROC Filing</ion-select-option>
+      <ion-select-option value="Appointment Of Director">Appointment Of Director</ion-select-option>
+      <ion-select-option value="Resignation Of Director">Resignation Of Director</ion-select-option>
+      <ion-select-option value="Shifting of Registered Office">Shifting of Registered Office</ion-select-option>
+      <ion-select-option value="Change in Authorised Capital">Change in Authorised Capital</ion-select-option>
+      <ion-select-option value="Closure Of Pvt. Ltd. Company">Closure Of Pvt. Ltd. Company</ion-select-option>
+      <ion-select-option value="Closure of OPC">Closure of OPC</ion-select-option>
+      <ion-select-option value="Closure of LLP">Closure of LLP</ion-select-option>
+      <ion-select-option value="ISO Certification">ISO Certification</ion-select-option>
+      <ion-select-option value="MSME Registration">MSME Registration</ion-select-option>
+
+    </ion-select>
+    
+  </ion-item>
+  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.company.errors?.required">
+    select company 
+  </span>
+
+
+</div>
+</form>
+  </ion-content>
+  <ion-footer>
+    <ion-button (click)="payment()" class="ion-button-class" 
+  expand="block" style="--background: #753a88!important;
+  font-weight: 600;">Make Payment</ion-button>
+  </ion-footer>

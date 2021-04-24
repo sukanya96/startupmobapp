@@ -1,0 +1,114 @@
+
+<ion-header>
+  <ion-toolbar style="--background:#753a88!important;--border-color:white;--border-width:1px;">
+    <ion-buttons slot="start">
+      <ion-icon name="chevron-back-outline" style="font-size:23px;color: white;" [routerLink]="['/dashboard']"></ion-icon>
+      <h4 style="color: white;margin-left:15px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Grab It Now</h4>
+      </ion-buttons>
+     </ion-toolbar>
+   </ion-header>
+
+<ion-content>
+  <form [formGroup]="formcontrol" (ngSubmit)="grab()">
+
+  <div class="center">
+
+    
+    <h5 style="text-align: center;color: black;" >Share & get 21 Must Have  </h5>
+    <h5 style="text-align: center;color: black;">Startup Legal Agreements </h5>
+     <h5 style="text-align: center;color: black;">Absolutely Free</h5>
+  
+     <ion-item transparent>  
+      <ion-label position="floating" color="dark">  
+        <ion-icon name="person" style="padding-right: 10px;font-size: 20px;">
+        </ion-icon>Full Name</ion-label> 
+      <ion-input type="text" formControlName="fullname"></ion-input>
+    
+    </ion-item>
+  
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.fullname.errors?.required">
+      Name is required.
+    </span>
+   
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.fullname.errors?.minlength">
+      Name must be at least 5 characters long.
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.fullname.errors?.pattern">
+      Name must contain only letters.
+    </span>
+   
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.fullname.errors?.maxlength">
+      Name cannot be more than 20 characters long.
+    </span>
+   
+  
+    <ion-item transparent>
+        
+      <ion-label position="floating" color="dark">  
+        <ion-icon name="call" style="padding-right: 10px;font-size: 20px;"></ion-icon>
+        Mobile Number</ion-label>
+      
+      <ion-input type="number" formControlName="phone"></ion-input>
+       
+    </ion-item>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.phone.errors?.required">
+      Mobile number is required.
+    </span>
+   
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.phone.errors?.pattern">
+      Please enter 10 digit phone number
+    </span>
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.phone.errors?.maxLength">
+   mobile number not valid</span>
+   <span class="error ion-padding" *ngIf="isSubmitted && errorControl.phone.errors?.minLength">
+    Please enter 10 digit phone number
+     </span>
+  
+  
+    <ion-item transparent>
+        
+      <ion-label position="floating" color="dark">
+        <ion-icon name="mail" style="padding-right: 15px;font-size: 20px;">
+        </ion-icon>Email</ion-label>
+      
+      <ion-input type="text" formControlName="email"></ion-input>
+       
+    </ion-item>
+    
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+      Email required
+    </span>
+   
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+      Please enter Valid Email
+    </span>
+  
+    <ion-item transparent>
+        
+      <ion-label position="floating" color="dark">
+      <ion-icon name="location" style="padding-right: 10px;font-size: 20px;"></ion-icon>
+      City Name</ion-label>
+      <ion-input type="text" formControlName="city"></ion-input>
+       
+    </ion-item>
+    
+    <span class="error ion-padding" *ngIf="isSubmitted && errorControl.city.errors?.required">
+      City Name required
+    </span>
+  
+    <ion-item transparent lines="none">
+    <ion-label style="font-size: 16px;padding-top: 15px;padding-left: 13px;">Or Use Current Location
+    
+    <ion-icon name="locate" style="font-size: 20px;padding-left: 16px;">
+      Yur location : {{address}}</ion-icon></ion-label>
+      </ion-item>
+
+</div>
+</form>
+<br>
+  </ion-content>
+
+<ion-footer style="--background:#753a88!important;">
+  <ion-button (click)="grab()" class="ion-button-class" expand="block" 
+  style="--background:#753a88!important;">Grab It Now</ion-button> 
+  </ion-footer>
